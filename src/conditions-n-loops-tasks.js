@@ -208,8 +208,19 @@ function getIndexOf(str, letter) {
  *  12345, 0    => false
  *  12345, 6    => false
  */
-function isContainNumber(/* num, digit */) {
-  throw new Error('Not implemented');
+function isContainNumber(num, digit) {
+  let number = num;
+  let LastDigit = number % 10;
+  while (number) {
+    if (number) {
+      LastDigit = number % 10;
+    }
+    if (LastDigit === digit) {
+      return true;
+    }
+    number = Math.floor(number / 10);
+  }
+  return false;
 }
 
 /**
